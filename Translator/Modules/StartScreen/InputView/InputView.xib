@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputView" customModule="Translator" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="z1W-rJ-6XM" id="4vI-RD-Amq"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="44v-ax-lIb"/>
+                <outlet property="firstLangButton" destination="w5D-YB-4Tz" id="yDf-vE-f6f"/>
+                <outlet property="secondLangButton" destination="7IR-cn-YYg" id="5Ic-bm-OQy"/>
+                <outlet property="textField" destination="C3S-b9-3o7" id="0wd-iw-cvp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3S-b9-3o7">
+                    <rect key="frame" x="100" y="16.5" width="225" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="Isy-TR-CAi"/>
+                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="Gyl-cg-Jtk"/>
+                        <action selector="editingDidEnd:" destination="-1" eventType="editingDidEnd" id="Alh-Ko-NjL"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1W-rJ-6XM">
+                    <rect key="frame" x="335" y="0.0" width="30" height="83"/>
+                    <color key="tintColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="microphone"/>
+                    <connections>
+                        <action selector="actionButtonClicked:" destination="-1" eventType="touchUpInside" id="R4a-3v-z9t"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5D-YB-4Tz">
+                    <rect key="frame" x="16" y="0.0" width="32" height="83"/>
+                    <state key="normal" image="ru"/>
+                    <connections>
+                        <action selector="langButtonClicked:" destination="-1" eventType="touchUpInside" id="Jp7-Tw-BBd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-cn-YYg">
+                    <rect key="frame" x="28" y="0.0" width="32" height="83"/>
+                    <state key="normal" image="en"/>
+                    <connections>
+                        <action selector="langButtonClicked:" destination="-1" eventType="touchUpInside" id="O9R-3c-32p"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1058823529" green="0.2274509804" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="C3S-b9-3o7" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" id="3K9-uo-6VH"/>
+                <constraint firstAttribute="bottom" secondItem="7IR-cn-YYg" secondAttribute="bottom" id="5Nj-Fb-iNk"/>
+                <constraint firstItem="w5D-YB-4Tz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="85w-6j-GBi"/>
+                <constraint firstItem="7IR-cn-YYg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="28" id="Cz9-va-1St"/>
+                <constraint firstItem="C3S-b9-3o7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="E9n-lt-P0f"/>
+                <constraint firstAttribute="trailing" secondItem="z1W-rJ-6XM" secondAttribute="trailing" constant="10" id="Iwd-3u-ZOf"/>
+                <constraint firstAttribute="bottom" secondItem="w5D-YB-4Tz" secondAttribute="bottom" id="XEw-Fk-Pyj"/>
+                <constraint firstItem="w5D-YB-4Tz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="ZRZ-Tg-ljA"/>
+                <constraint firstItem="z1W-rJ-6XM" firstAttribute="leading" secondItem="C3S-b9-3o7" secondAttribute="trailing" constant="10" id="dBW-jO-Wo4"/>
+                <constraint firstItem="7IR-cn-YYg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dcb-8J-CgG"/>
+                <constraint firstItem="C3S-b9-3o7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="mm6-ag-cTw"/>
+                <constraint firstItem="z1W-rJ-6XM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="owa-P2-4kZ"/>
+                <constraint firstAttribute="bottom" secondItem="z1W-rJ-6XM" secondAttribute="bottom" id="urk-Sx-qKT"/>
+                <constraint firstAttribute="trailing" secondItem="C3S-b9-3o7" secondAttribute="trailing" constant="50" id="uwy-r4-5mY"/>
+                <constraint firstItem="z1W-rJ-6XM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wOK-XQ-mzM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="36" y="20.239880059970016"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="en" width="32" height="32"/>
+        <image name="microphone" width="12" height="16"/>
+        <image name="ru" width="32" height="32"/>
+    </resources>
+</document>

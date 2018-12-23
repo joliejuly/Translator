@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Translator
+
+  Created by Julia Nikitina on 23/12/2018.
+*/
+"UnknownError" = "Извините, произошла неизвестная ошибка";
+"Ok" = "Хорошо";
+"Speak" = "Говорите...";
+"EnterText" = "Введите текст...";
+"English" = "Английский";
+"Russian" = "Русский";
