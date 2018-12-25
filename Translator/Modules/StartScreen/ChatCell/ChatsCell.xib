@@ -57,16 +57,16 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obd-PM-ovp">
-                        <rect key="frame" x="19" y="26" width="427" height="120.5"/>
+                        <rect key="frame" x="79.5" y="26" width="366.5" height="120.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMv-UV-9lc">
-                                <rect key="frame" x="7" y="87" width="408.5" height="23.5"/>
+                                <rect key="frame" x="10" y="87" width="345" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFy-PU-5lh">
-                                <rect key="frame" x="8.5" y="10" width="408.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFy-PU-5lh">
+                                <rect key="frame" x="11.5" y="10" width="345" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -80,12 +80,13 @@
                             <constraint firstAttribute="trailing" secondItem="SMv-UV-9lc" secondAttribute="trailing" constant="11.5" id="CHD-63-MQ6"/>
                             <constraint firstAttribute="bottom" secondItem="SMv-UV-9lc" secondAttribute="bottom" constant="10" id="JoR-ub-S4z"/>
                             <constraint firstItem="SMv-UV-9lc" firstAttribute="top" secondItem="nFy-PU-5lh" secondAttribute="bottom" constant="7" id="Nxf-w6-jpB"/>
-                            <constraint firstItem="SMv-UV-9lc" firstAttribute="leading" secondItem="obd-PM-ovp" secondAttribute="leading" constant="7" id="Qi2-5y-lBT"/>
+                            <constraint firstItem="SMv-UV-9lc" firstAttribute="leading" secondItem="obd-PM-ovp" secondAttribute="leading" constant="10" id="Qi2-5y-lBT"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="obd-PM-ovp" secondAttribute="bottom" constant="10" id="9hH-UB-xmJ"/>
+                    <constraint firstItem="obd-PM-ovp" firstAttribute="width" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" id="9zS-aG-AU9"/>
                     <constraint firstItem="obd-PM-ovp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="AHN-cK-qrc"/>
                     <constraint firstItem="yjU-j4-eBg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="DC5-6L-1Bk"/>
                     <constraint firstItem="yjU-j4-eBg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="Otb-Qu-ECf"/>
