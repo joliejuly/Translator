@@ -60,13 +60,13 @@
                         <rect key="frame" x="19" y="26" width="427" height="120.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMv-UV-9lc">
-                                <rect key="frame" x="7" y="16" width="408.5" height="23.5"/>
+                                <rect key="frame" x="7" y="87" width="408.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFy-PU-5lh">
-                                <rect key="frame" x="8.5" y="47.5" width="408.5" height="18"/>
+                                <rect key="frame" x="8.5" y="10" width="408.5" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -74,14 +74,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.84705882349999995" green="0.0" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SMv-UV-9lc" firstAttribute="top" secondItem="obd-PM-ovp" secondAttribute="top" constant="8" id="33s-gO-x2E"/>
                             <constraint firstAttribute="trailing" secondItem="nFy-PU-5lh" secondAttribute="trailing" constant="10" id="5Pw-NW-h2d"/>
                             <constraint firstItem="nFy-PU-5lh" firstAttribute="width" secondItem="SMv-UV-9lc" secondAttribute="width" id="B4M-GY-mzR"/>
+                            <constraint firstItem="nFy-PU-5lh" firstAttribute="top" secondItem="obd-PM-ovp" secondAttribute="top" constant="10" id="C5x-A7-JSK"/>
                             <constraint firstAttribute="trailing" secondItem="SMv-UV-9lc" secondAttribute="trailing" constant="11.5" id="CHD-63-MQ6"/>
+                            <constraint firstAttribute="bottom" secondItem="SMv-UV-9lc" secondAttribute="bottom" constant="10" id="JoR-ub-S4z"/>
+                            <constraint firstItem="SMv-UV-9lc" firstAttribute="top" secondItem="nFy-PU-5lh" secondAttribute="bottom" constant="7" id="Nxf-w6-jpB"/>
                             <constraint firstItem="SMv-UV-9lc" firstAttribute="leading" secondItem="obd-PM-ovp" secondAttribute="leading" constant="7" id="Qi2-5y-lBT"/>
-                            <constraint firstAttribute="bottom" secondItem="nFy-PU-5lh" secondAttribute="bottom" constant="10" id="ZkE-NG-qrX"/>
-                            <constraint firstItem="nFy-PU-5lh" firstAttribute="top" secondItem="SMv-UV-9lc" secondAttribute="bottom" constant="8" id="gCz-TT-Efz"/>
-                            <constraint firstItem="nFy-PU-5lh" firstAttribute="top" secondItem="SMv-UV-9lc" secondAttribute="bottom" constant="8" id="mjs-ME-axs"/>
                         </constraints>
                     </view>
                 </subviews>
