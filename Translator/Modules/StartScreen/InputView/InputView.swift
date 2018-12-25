@@ -23,6 +23,7 @@ final class InputView: UIView {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var firstLangButton: UIButton!
     @IBOutlet weak var secondLangButton: UIButton!
+    @IBOutlet weak var speakersView: SpeakersView!
     weak var delegate: InputViewDelegate?
     var speechEnabled = false
     private var translationType: TranslationType = .enRu
@@ -65,9 +66,7 @@ final class InputView: UIView {
                 editingDidEnd(textField)
                 return
             }
-            actionButton.setImage(
-                ButtonState.speakers.image,
-                for: .normal)
+            showSpeakers()
             currentButtonState = .speakers
             textField.attributedPlaceholder =
             NSAttributedString(string: "Speak".localized,
@@ -86,6 +85,29 @@ final class InputView: UIView {
         }
     }
     
+    private func showSpeakers() {
+        UIView.transition(with: speakersView,
+                          duration: 0.2,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.speakersView?.isHidden = false
+                            self.actionButton?.isHidden = true
+                        }) { _ in
+                            self.speakersView.animate()
+                        }
+    }
+    
+    private func hideSpeakers() {
+        UIView.transition(with: speakersView,
+                          duration: 0.2,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.speakersView?.isHidden = true
+                            self.actionButton?.isHidden = false
+                          },
+                          completion: nil)
+    }
+    
     @IBAction func langButtonClicked(_ sender: Any) {
         translationType = translationType.reversed
         UIView.animate(withDuration: 0.3) {
@@ -101,6 +123,7 @@ final class InputView: UIView {
                                        for: .normal)
         updatePlaceholder()
     }
+    
     private func updatePlaceholder() {
         textField.attributedPlaceholder =
             NSAttributedString(
@@ -108,6 +131,7 @@ final class InputView: UIView {
                 attributes: [.foregroundColor: UIColor.lightGray,
                              .font: UIFont.medium(size: 17)])
     }
+    
     private func endEditing() {
         delegate?.editingDidEnd(with: textField.text,
                                 and: translationType)
@@ -118,6 +142,7 @@ final class InputView: UIView {
         textField.text = ""
         updatePlaceholder()
     }
+    
     private func setUp() {
         Bundle.main.loadNibNamed("InputView",
                                  owner: self,
@@ -143,5 +168,13 @@ final class InputView: UIView {
         contentView.backgroundColor = .translateBlue
         updatePlaceholder()
         textField.font = UIFont.medium(size: 17)
+        speakersView.delegate = self
+    }
+}
+
+extension InputView: SpeakersViewDelegate {
+    func stopRecording() {
+        hideSpeakers()
+        delegate?.finishDictation()
     }
 }

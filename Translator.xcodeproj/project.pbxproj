@@ -11,6 +11,9 @@
 		B8730AE87E5BE8A4891715B0 /* Pods_TranslatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA95C76C7410432EF6EFC774 /* Pods_TranslatorTests.framework */; };
 		D842F03421CFEF62009C0285 /* ChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842F03221CFEF62009C0285 /* ChatsCell.swift */; };
 		D842F03521CFEF62009C0285 /* ChatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D842F03321CFEF62009C0285 /* ChatsCell.xib */; };
+		D88C24AC21D286A600FFBD10 /* SpeakersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88C24AB21D286A600FFBD10 /* SpeakersView.xib */; };
+		D88C24AE21D2889200FFBD10 /* SpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C24AD21D2889200FFBD10 /* SpeakersView.swift */; };
+		D88C24B021D28FE700FFBD10 /* SpeakersViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C24AF21D28FE700FFBD10 /* SpeakersViewDelegate.swift */; };
 		D8CEA06B21CF950F0052F206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEA06A21CF950F0052F206 /* AppDelegate.swift */; };
 		D8CEA07221CF95100052F206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CEA07121CF95100052F206 /* Assets.xcassets */; };
 		D8CEA07521CF95100052F206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CEA07321CF95100052F206 /* LaunchScreen.storyboard */; };
@@ -63,6 +66,9 @@
 		D4C92E0C0FB1D8A5A389D056 /* Pods-Translator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Translator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Translator/Pods-Translator.debug.xcconfig"; sourceTree = "<group>"; };
 		D842F03221CFEF62009C0285 /* ChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCell.swift; sourceTree = "<group>"; };
 		D842F03321CFEF62009C0285 /* ChatsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsCell.xib; sourceTree = "<group>"; };
+		D88C24AB21D286A600FFBD10 /* SpeakersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakersView.xib; sourceTree = "<group>"; };
+		D88C24AD21D2889200FFBD10 /* SpeakersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersView.swift; sourceTree = "<group>"; };
+		D88C24AF21D28FE700FFBD10 /* SpeakersViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewDelegate.swift; sourceTree = "<group>"; };
 		D8CEA06721CF950F0052F206 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEA06A21CF950F0052F206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CEA07121CF95100052F206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +156,16 @@
 				D842F03321CFEF62009C0285 /* ChatsCell.xib */,
 			);
 			path = ChatCell;
+			sourceTree = "<group>";
+		};
+		D88C24AA21D2867400FFBD10 /* SpeakersView */ = {
+			isa = PBXGroup;
+			children = (
+				D88C24AB21D286A600FFBD10 /* SpeakersView.xib */,
+				D88C24AD21D2889200FFBD10 /* SpeakersView.swift */,
+				D88C24AF21D28FE700FFBD10 /* SpeakersViewDelegate.swift */,
+			);
+			path = SpeakersView;
 			sourceTree = "<group>";
 		};
 		D8CEA05E21CF950F0052F206 = {
@@ -326,6 +342,7 @@
 		D8CEA0D421CFD4310052F206 /* InputView */ = {
 			isa = PBXGroup;
 			children = (
+				D88C24AA21D2867400FFBD10 /* SpeakersView */,
 				D8CEA0D521CFD44B0052F206 /* InputView.xib */,
 				D8CEA0D721CFD4610052F206 /* InputView.swift */,
 				D8CEA0D921CFDDDB0052F206 /* InputViewDelegate.swift */,
@@ -421,6 +438,7 @@
 				D8CEA0C221CFC2FA0052F206 /* Roboto-Medium.ttf in Resources */,
 				D8CEA0D021CFC8730052F206 /* Localizable.strings in Resources */,
 				D8CEA0AE21CFAE660052F206 /* StartScreenView.xib in Resources */,
+				D88C24AC21D286A600FFBD10 /* SpeakersView.xib in Resources */,
 				D8CEA0C421CFC31C0052F206 /* Roboto-Regular.ttf in Resources */,
 				D8CEA07521CF95100052F206 /* LaunchScreen.storyboard in Resources */,
 				D842F03521CFEF62009C0285 /* ChatsCell.xib in Resources */,
@@ -542,11 +560,13 @@
 				D8CEA09321CF99D80052F206 /* AppCoordinator.swift in Sources */,
 				D8CEA0DA21CFDDDB0052F206 /* InputViewDelegate.swift in Sources */,
 				D8CEA0AD21CFAE660052F206 /* StartScreenView.swift in Sources */,
+				D88C24AE21D2889200FFBD10 /* SpeakersView.swift in Sources */,
 				D8CEA0B421CFAFD80052F206 /* StartScreenPresenter.swift in Sources */,
 				D8CEA08B21CF95250052F206 /* BasePresenter.swift in Sources */,
 				D8CEA0B221CFAFCB0052F206 /* StartScreenInteractor.swift in Sources */,
 				D8CEA0A721CFACE40052F206 /* MainRoute.swift in Sources */,
 				D842F03421CFEF62009C0285 /* ChatsCell.swift in Sources */,
+				D88C24B021D28FE700FFBD10 /* SpeakersViewDelegate.swift in Sources */,
 				D8CEA06B21CF950F0052F206 /* AppDelegate.swift in Sources */,
 				D8CEA0BF21CFC0760052F206 /* UIColor+Extension.swift in Sources */,
 			);

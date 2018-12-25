@@ -15,6 +15,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="44v-ax-lIb"/>
                 <outlet property="firstLangButton" destination="w5D-YB-4Tz" id="yDf-vE-f6f"/>
                 <outlet property="secondLangButton" destination="7IR-cn-YYg" id="5Ic-bm-OQy"/>
+                <outlet property="speakersView" destination="LN6-U4-TKV" id="gb4-xy-rWV"/>
                 <outlet property="textField" destination="C3S-b9-3o7" id="0wd-iw-cvp"/>
             </connections>
         </placeholder>
@@ -58,6 +59,14 @@
                         <action selector="langButtonClicked:" destination="-1" eventType="touchUpInside" id="O9R-3c-32p"/>
                     </connections>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LN6-U4-TKV" customClass="SpeakersView" customModule="Translator" customModuleProvider="target">
+                    <rect key="frame" x="335" y="26.5" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Cb9-bC-Vj1"/>
+                        <constraint firstAttribute="width" constant="30" id="Ebi-o4-aMi"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.1058823529" green="0.2274509804" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
@@ -68,6 +77,8 @@
                 <constraint firstItem="7IR-cn-YYg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="28" id="Cz9-va-1St"/>
                 <constraint firstItem="C3S-b9-3o7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="E9n-lt-P0f"/>
                 <constraint firstAttribute="trailing" secondItem="z1W-rJ-6XM" secondAttribute="trailing" constant="10" id="Iwd-3u-ZOf"/>
+                <constraint firstAttribute="trailing" secondItem="LN6-U4-TKV" secondAttribute="trailing" constant="10" id="Sjq-BP-6Jh"/>
+                <constraint firstItem="LN6-U4-TKV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wrr-kt-EZg"/>
                 <constraint firstAttribute="bottom" secondItem="w5D-YB-4Tz" secondAttribute="bottom" id="XEw-Fk-Pyj"/>
                 <constraint firstItem="w5D-YB-4Tz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="ZRZ-Tg-ljA"/>
                 <constraint firstItem="z1W-rJ-6XM" firstAttribute="leading" secondItem="C3S-b9-3o7" secondAttribute="trailing" constant="10" id="dBW-jO-Wo4"/>
@@ -79,7 +90,7 @@
                 <constraint firstItem="z1W-rJ-6XM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wOK-XQ-mzM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="36" y="20.239880059970016"/>
+            <point key="canvasLocation" x="36" y="10.344827586206897"/>
         </view>
     </objects>
     <resources>
