@@ -104,7 +104,7 @@ final class StartScreenView: BaseView {
             self.view.layoutIfNeeded()
         }
     }
-    private func scrollToBottom() {
+    func scrollToBottom() {
         DispatchQueue.main.async { [weak self] in
             guard
                 let self = self,

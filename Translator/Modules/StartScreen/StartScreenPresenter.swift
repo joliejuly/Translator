@@ -80,6 +80,7 @@ StartScreenPresenterDelegate> {
                 guard let text = text else { return }
                 self.translations += text
                 self.view?.chatTableView.reloadData()
+                self.view?.scrollToBottom()
             }
         }
     }
