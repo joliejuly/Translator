@@ -33,13 +33,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-RV-z2j">
                                 <rect key="frame" x="15" y="8" width="408.5" height="108.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftC-0I-Hof">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftC-0I-Hof">
                                         <rect key="frame" x="0.0" y="0.0" width="408.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                         <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiE-w4-qcd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiE-w4-qcd">
                                         <rect key="frame" x="0.0" y="18" width="408.5" height="90.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                         <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,13 +59,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obd-PM-ovp">
                         <rect key="frame" x="79.5" y="26" width="366.5" height="120.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMv-UV-9lc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMv-UV-9lc">
                                 <rect key="frame" x="10" y="87" width="345" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFy-PU-5lh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="hjhjhjhjhjdsjkdjksjdksjdksjdkjskdjskjdksjdksjd" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFy-PU-5lh">
                                 <rect key="frame" x="11.5" y="10" width="345" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" white="0.96856271400000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
