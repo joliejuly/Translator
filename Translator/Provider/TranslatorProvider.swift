@@ -13,7 +13,7 @@ enum TranslatorProvider {
 }
 extension TranslatorProvider: TargetType {
     private var apiKey: String {
-        return "trnsl.1.1.20181223T114229Z.2ccaadc1d3213b72.ad69bd08f24894091a5b20f018897d24332d2dac"
+        return ""
     }
     var path: String {
         switch self {
