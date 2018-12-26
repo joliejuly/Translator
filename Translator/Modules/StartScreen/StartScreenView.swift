@@ -131,18 +131,17 @@ extension StartScreenView: InputViewDelegate {
         delegate?.translate(text, with: type)
     }
     func startDictation(with type: TranslationType) {
-        startRecording(with: type)
+        do {
+            try startRecording(with: type)
+        } catch {
+            
+        }
     }
     func finishDictation() {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
         }
-        if recognitionTask != nil {
-            recognitionTask?.cancel()
-            recognitionTask = nil
-        }
-        audioEngine.inputNode.removeTap(onBus: 0)
     }
 }
 
@@ -168,28 +167,23 @@ extension StartScreenView: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension StartScreenView: SFSpeechRecognizerDelegate {
-    func startRecording(with type: TranslationType) {
+    private func startRecording(with type: TranslationType) throws {
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
         }
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.record,
-                                                            mode: .default,
-                                                            options: [])
-            try AVAudioSession.sharedInstance()
-                .setMode(AVAudioSession.Mode.measurement)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-        } catch {
-            print("audioSession properties weren't set because of an error.")
-        }
-        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(.record,
+                                     mode: .measurement,
+                                     options: .duckOthers)
+        try audioSession.setActive(true,
+                                   options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
-        guard let recognitionRequest = recognitionRequest else {
-            fatalError(
-                "Unable to create an SFSpeechAudioBufferRecognitionRequest object")
-        }
-        recognitionRequest.shouldReportPartialResults = true
+        
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = recognitionRequest
+            else { return }
+        recognitionRequest.shouldReportPartialResults = false
         var speechRecognizer: SFSpeechRecognizer?
         switch type {
         case .enRu:
@@ -198,14 +192,16 @@ extension StartScreenView: SFSpeechRecognizerDelegate {
             speechRecognizer = russianSpeechRecognizer
         }
         recognitionTask = speechRecognizer?
-            .recognitionTask(with: recognitionRequest,
-                             resultHandler: { [weak self] result, error in
-            guard let self = self else { return }
+            .recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
-            if result != nil {
-                let text = result!.bestTranscription.formattedString
-                self.delegate?.translate(text, with: type)
-                isFinal = (result?.isFinal)!
+            
+            if let result = result {
+                let text = result
+                    .bestTranscription.formattedString
+                isFinal = result.isFinal
+                if isFinal {
+                    self.delegate?.translate(text, with: type)
+                }
             }
             if error != nil || isFinal {
                 self.audioEngine.stop()
@@ -213,18 +209,17 @@ extension StartScreenView: SFSpeechRecognizerDelegate {
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
             }
-        })
+        }
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0,
                              bufferSize: 1024,
                              format: recordingFormat) {
-                                [weak self] buffer, when in
-            self?.recognitionRequest?.append(buffer)
+                                (buffer: AVAudioPCMBuffer,
+                                when: AVAudioTime) in
+            self.recognitionRequest?.append(buffer)
         }
         audioEngine.prepare()
-        do {
-            try audioEngine.start()
-        } catch {}
+        try audioEngine.start()
     }
 }
 
