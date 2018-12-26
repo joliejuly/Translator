@@ -34,18 +34,28 @@ final class StartScreenView: BaseView {
     private let englishSpeechRecognizer = SFSpeechRecognizer(
         locale: Locale(identifier: "en-US")
     )
+    private var isKeyboardOnScreen = false
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpKeyboardNotifications()
         setUpTableView()
         setUpSpeechRecognizer()
         navigationController?.navigationBar.isHidden = true
         textInputView.delegate = self
         russianSpeechRecognizer?.delegate = self
         englishSpeechRecognizer?.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpKeyboardNotifications()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        removeKeyboardNotifications()
     }
     
     private func setUpTableView() {
@@ -88,13 +98,24 @@ final class StartScreenView: BaseView {
         
     }
     
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default
+            .removeObserver(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default
+            .removeObserver(UIResponder.keyboardWillHideNotification)
+    }
+    
     @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
+        if isKeyboardOnScreen {
+            return
+        }
         UIView.animate(withDuration: 0.4) {
             self.inputViewBottom.constant -= keyboardSize.height + 10
             self.view.layoutIfNeeded()
         }
+        isKeyboardOnScreen = true
         scrollToBottom()
     }
     
@@ -103,6 +124,7 @@ final class StartScreenView: BaseView {
             self.inputViewBottom.constant = -10
             self.view.layoutIfNeeded()
         }
+        isKeyboardOnScreen = false
     }
     func scrollToBottom() {
         DispatchQueue.main.async { [weak self] in
