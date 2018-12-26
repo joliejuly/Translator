@@ -47,19 +47,23 @@ StartScreenPresenterDelegate> {
                     error,
                     title: error.localizedDescription
                 )
+                self.textsToTranslate.removeLast()
             } else {
                 guard let detectedCode = text,
                 let lang = LanguageCode(rawValue: detectedCode)
-                    else { return }
+                    else {
+                        self.textsToTranslate.removeLast()
+                        return
+                }
                 switch lang {
                 case .en:
                     self.translationType = .enRu
                 case .ru:
                     self.translationType = .ruEn
                 }
+                self.translationTypes.append(self.translationType)
                 guard let textToTranslate = self.textsToTranslate.last
                     else { return }
-                self.translationTypes.append(self.translationType)
                 self.translate(text: textToTranslate,
                                lang: self.translationType.rawValue)
             }

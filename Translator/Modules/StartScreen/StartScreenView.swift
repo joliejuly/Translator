@@ -199,9 +199,7 @@ extension StartScreenView: SFSpeechRecognizerDelegate {
                 let text = result
                     .bestTranscription.formattedString
                 isFinal = result.isFinal
-                if isFinal {
-                    self.delegate?.translate(text, with: type)
-                }
+                self.delegate?.translate(text, with: type)
             }
             if error != nil || isFinal {
                 self.audioEngine.stop()
