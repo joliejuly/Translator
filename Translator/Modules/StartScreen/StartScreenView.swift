@@ -65,8 +65,6 @@ final class StartScreenView: BaseView {
                                forCellReuseIdentifier: "ChatsCell")
         chatTableView.delegate = self
         chatTableView.dataSource = self
-        chatTableView.rowHeight = UITableView.automaticDimension
-        chatTableView.estimatedRowHeight = UITableView.automaticDimension
         chatTableView.contentInset = UIEdgeInsets(top: 0,
                                                   left: 0,
                                                   bottom: 50,
@@ -185,7 +183,6 @@ extension StartScreenView: UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
-
 }
 
 extension StartScreenView: SFSpeechRecognizerDelegate {
